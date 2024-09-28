@@ -16,10 +16,7 @@ app.use("/auth", authRoutes);
 app.use("/health", healthRoutes);
 
 mongoose
-    .connect("mongodb://localhost:27017/healthTrackerDB", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
+    .connect("mongodb://localhost:27017/sensortrackerDB")
     .then(() => {
         console.log("Connected to MongoDB");
     })
