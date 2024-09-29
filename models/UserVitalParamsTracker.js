@@ -6,28 +6,44 @@ const userVitalParamsSchema = new mongoose.Schema({
         ref: "User",
         required: true,
     },
-    activityType: {
-        type: String,
-        enum: ["exercise", "meal", "water intake", "sleep"],
-        required: true,
-    },
-    description: {
-        type: String,
-        required: true,
-    },
-    duration: {
-        type: Number,
-    },
-    calories: {
-        type: Number,
-    },
     createdAt: {
         type: Date,
         default: Date.now,
     },
+    height: {
+        type: Number,
+        required: true,
+    },
+    weight: {
+        type: Number,
+        required: true,
+    },
+    BMI: {
+        type: Number,
+    },
+    fatBodyMass: {
+        type: Number,
+    },
+    bodyFatPerc: {
+        type: Number,
+    },
+    leanBodyMass: {
+        type: Number,
+    },
+    muscFreq: {
+        type: Number,
+    },
+    subcutaneousFat: {
+        type: Number,
+    },
+    visceralFat: {
+        type: Number,
+    },
+    BMR: {
+        type: Number,
+    },
 });
 
-const UserVitalParamsTracker = mongoose.model("UserVitalParamsTracker",
-    userVitalParamsSchema);
+const UserVitalParamsTracker = mongoose.model("UserVitalParamsTracker", userVitalParamsSchema);
 
 module.exports = UserVitalParamsTracker;

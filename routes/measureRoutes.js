@@ -6,8 +6,4 @@ router.post("/measurement", uVPController.createUVP);
 
 router.get("/measurement/:id", uVPController.getUVP);
 
-router.put("/measurement/:id", uVPController.updateUVP);
-
-router.delete("/measurement/:id", uVPController.deleteUVP);
-
 module.exports = router;

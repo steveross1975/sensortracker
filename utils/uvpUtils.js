@@ -1,0 +1,1 @@
+//exports.BMICalc(weigth, height) = 
