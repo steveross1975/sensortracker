@@ -6,8 +6,8 @@ router.post("/activity", healthController.createActivity);
 
 router.get("/activity/:id", healthController.getActivity);
 
-router.put("/activity/:id", healthController.updateActivity);
+// router.put("/activity/:id", healthController.updateActivity);
 
-router.delete("/activity/:id", healthController.deleteActivity);
+// router.delete("/activity/:id", healthController.deleteActivity);
 
 module.exports = router;

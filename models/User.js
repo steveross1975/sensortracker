@@ -25,6 +25,11 @@ const userSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
+    gender: {
+        type: String,
+        enum: ['donna', 'uomo', 'non-binary', 'preferisco non dirlo'],
+        required: true,
+    },
 });
 
 const User = mongoose.model("User", userSchema);

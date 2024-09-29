@@ -15,13 +15,29 @@ const healthActivitySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    duration: {
-        type: Number,
+    reactionTime: {
+        type: Date,
     },
-    calories: {
-        type: Number,
+    firstStep: {
+        type: Date,
+    },
+    secondStep: {
+        type: Date,
+    },
+    thirdStep: {
+        type: Date,
+    },
+    fourthStep: {
+        type: Date,
+    },
+    nthStep: {
+        type: Date,
     },
     createdAt: {
+        type: Date,
+        default: Date.now,
+    },
+    activityStartedAt: {
         type: Date,
         default: Date.now,
     },

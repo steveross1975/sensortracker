@@ -18,25 +18,33 @@ const userVitalParamsSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    age: { //capire come calcolarla
+        type: Number,
+        required: true,
+    },
+    gender: { //capire come acquisirlo dallo User
+        type: Number,
+        required: true,
+    },
     BMI: {
         type: Number,
     },
-    fatBodyMass: {
+    fatBodyMass: { //da sensore bioimpedenziometrico
         type: Number,
     },
-    bodyFatPerc: {
+    bodyFatPerc: { //calcolato da fatBodyMass ((fatBodyMass/weight)*100)
         type: Number,
     },
-    leanBodyMass: {
+    leanBodyMass: { //calcolato da fatBodyMass (weight - fatBodyMass)
         type: Number,
     },
     muscFreq: {
         type: Number,
     },
-    subcutaneousFat: {
+    subcutaneousFat: { //da sensore bioimpedenziometrico
         type: Number,
     },
-    visceralFat: {
+    visceralFat: { //da sensore bioimpedenziometrico
         type: Number,
     },
     BMR: {
