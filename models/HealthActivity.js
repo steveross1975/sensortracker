@@ -6,14 +6,8 @@ const healthActivitySchema = new mongoose.Schema({
         ref: "User",
         required: true,
     },
-    activityType: {
-        type: String,
-        enum: ["exercise", "meal", "water intake", "sleep"],
-        required: true,
-    },
     description: {
         type: String,
-        required: true,
     },
     reactionTime: {
         type: Date,
