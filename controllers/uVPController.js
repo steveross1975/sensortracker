@@ -22,12 +22,13 @@ exports.createUVP = async (req, res) => {
         //const BMI = BMICalc(weigth, height);
         const heightMt = height*100;
         const BMI = (1.3*weight)/(heightMt ** 2.5)
+        let BMR;
         if(gender == 'donna') {
-            const BMR =  655 + (9.6*weight) + (1.8*height) - (4.7*age);
+            BMR =  655 + (9.6*weight) + (1.8*height) - (4.7*age);
         } else if (gender == 'uomo') {
-            const BMR =  66.5 + (13.7*weight) + (5*height) - (6.8*age)
+            BMR =  66.5 + (13.7*weight) + (5*height) - (6.8*age)
         } else {
-            const BMR =  0
+            BMR =  0
         }
         const userVitalParams = await UserVitalParamsTracker.create({
             userId,
