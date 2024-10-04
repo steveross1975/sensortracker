@@ -23,7 +23,7 @@ const userVitalParamsSchema = new mongoose.Schema({
         required: true,
     },
     gender: { //capire come acquisirlo dallo User
-        type: Number,
+        type: String,
         required: true,
     },
     BMI: {
