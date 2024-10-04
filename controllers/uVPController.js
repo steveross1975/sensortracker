@@ -16,10 +16,10 @@ exports.createUVP = async (req, res) => {
             visceralFat,
         } = req.body;
         //const BMI = BMICalc(weigth, height);
-        const heightMt = height*100;
+        const heightMt = height/100;
         const BMI = (1.3*weight)/(heightMt ** 2.5)
-        const bodyLeanMass = weight - fatBodyMass;
-        const bodyFatPerc = (fatBodyMass/weight)*100;
+        const bodyLeanMass = weight - bodyFatMass;
+        const bodyFatPerc = (bodyFatMass/weight)*100;
         let BMR;
         if(gender == 'donna') {
             BMR =  655 + (9.6*weight) + (1.8*height) - (4.7*age);
