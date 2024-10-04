@@ -2,15 +2,14 @@ const User = require("../models/User");
 const { hashPassword, verifyPassword } = require('../utils/pwdUtils');
 
 exports.signup = async (req, res) => {
-    let hashedPassword;
     try {
-        const {  email, password ,firstName, middleName, lastName, birthDate, gender } = req.body;
+        let {  email, password ,firstName, middleName, lastName, birthDate, gender } = req.body;
         try {
-            hashedPassword = await hashPassword(password);
+            password = await hashPassword(password);
           } catch (error) {
             res.status(400).json({ success: false, message: error.message });
         }
-        const user = await User.create({ email, hashedPassword, firstName, middleName, lastName, birthDate, gender });
+        const user = await User.create({ email, password, firstName, middleName, lastName, birthDate, gender });
         res.status(201).json({ success: true, user });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message});
