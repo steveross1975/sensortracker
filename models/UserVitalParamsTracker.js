@@ -29,13 +29,13 @@ const userVitalParamsSchema = new mongoose.Schema({
     BMI: {
         type: Number,
     },
-    fatBodyMass: { //da sensore bioimpedenziometrico
+    bodyFatMass: { //da sensore bioimpedenziometrico
         type: Number,
     },
     bodyFatPerc: { //calcolato da fatBodyMass ((fatBodyMass/weight)*100)
         type: Number,
     },
-    leanBodyMass: { //calcolato da fatBodyMass (weight - fatBodyMass)
+    bodyLeanMass: { //calcolato da fatBodyMass (weight - fatBodyMass)
         type: Number,
     },
     muscFreq: {
