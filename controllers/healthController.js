@@ -4,29 +4,21 @@ exports.createActivity = async (req, res) => {
     try {
         const { 
             userId,
-            activityType,
+            profile,
+            layoutId,
             description,
-            reactionTime,
-            firstStep,
-            secondStep,
-            thirdStep,
-            fourthStep,
-            nthStep,
+            activitySummary,
             createdAt,
-            activityStartedAt,
+            lastUpdatedAt,
         } = req.body;
         const activity = await HealthActivity.create({
             userId,
-            activityType,
+            profile,
+            layoutId,
             description,
-            reactionTime,
-            firstStep,
-            secondStep,
-            thirdStep,
-            fourthStep,
-            nthStep,
+            activitySummary,
             createdAt,
-            activityStartedAt,
+            lastUpdatedAt,
         });
         res.status(201).json({ success: true, activity });
     } catch (error) {

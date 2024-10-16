@@ -19,10 +19,7 @@ const healthActivitySchema = new mongoose.Schema({
     description: {
         type: String,
     },
-    reactionTime: {
-        type: Date,
-    },
-    activity: new Schema({
+    activitySummary: new Schema({
         activityStartedAt: {
             type: Date,
             default: Date.now,
@@ -34,7 +31,7 @@ const healthActivitySchema = new mongoose.Schema({
             sensorId: String,
             touchedAt: Date,
         }, {_id: false})]
-    }, {_id: false}),
+    }),
     createdAt: {
         type: Date,
         default: Date.now,
