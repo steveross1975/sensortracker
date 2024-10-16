@@ -10,6 +10,10 @@ const userVitalParamsSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    lastUpdatedAt: {
+        type: Date,
+        default: Date.now,
+    },
     height: {
         type: Number,
         required: true,

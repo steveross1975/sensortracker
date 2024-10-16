@@ -6,32 +6,40 @@ const healthActivitySchema = new mongoose.Schema({
         ref: "User",
         required: true,
     },
+    profile: { 
+        type: String,
+        enum: ['Athlete', 'Visually Impaired', 'Neuro Test'],
+        required: true,
+    },
+    layoutId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "SensorLayout",
+        required: true,
+    },
     description: {
         type: String,
     },
     reactionTime: {
         type: Date,
     },
-    firstStep: {
-        type: Date,
-    },
-    secondStep: {
-        type: Date,
-    },
-    thirdStep: {
-        type: Date,
-    },
-    fourthStep: {
-        type: Date,
-    },
-    nthStep: {
-        type: Date,
-    },
+    activity: new Schema({
+        activityStartedAt: {
+            type: Date,
+            default: Date.now,
+        },
+        reactionTime: {
+            type: Date
+        },
+        execution: [new Schema({
+            sensorId: String,
+            touchedAt: Date,
+        }, {_id: false})]
+    }, {_id: false}),
     createdAt: {
         type: Date,
         default: Date.now,
     },
-    activityStartedAt: {
+    lastUpdatedAt: {
         type: Date,
         default: Date.now,
     },

@@ -29,7 +29,16 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['donna', 'uomo', 'non-binary', 'preferisco non dirlo'],
         required: true,
+    },    
+    createdAt: {
+        type: Date,
+        default: Date.now,
     },
+    lastUpdatedAt: {
+        type: Date,
+        default: Date.now,
+    },
+
 });
 
 const User = mongoose.model("User", userSchema);
