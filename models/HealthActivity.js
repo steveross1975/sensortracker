@@ -6,12 +6,7 @@ const healthActivitySchema = new mongoose.Schema({
         ref: "User",
         required: true,
     },
-    profile: { 
-        type: String,
-        enum: ['Athlete', 'Visually Impaired', 'Neuro Test'],
-        required: true,
-    },
-    layoutId: {
+    userLayoutId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "SensorLayout",
         required: true,

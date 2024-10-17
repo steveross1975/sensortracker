@@ -4,8 +4,7 @@ exports.createActivity = async (req, res) => {
     try {
         const { 
             userId,
-            profile,
-            layoutId,
+            userLayoutId,
             description,
             activitySummary,
             createdAt,
@@ -13,8 +12,7 @@ exports.createActivity = async (req, res) => {
         } = req.body;
         const activity = await HealthActivity.create({
             userId,
-            profile,
-            layoutId,
+            userLayoutId,
             description,
             activitySummary,
             createdAt,
