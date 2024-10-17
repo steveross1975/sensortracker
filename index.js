@@ -9,6 +9,7 @@ const authRoutes = require("./routes/authRoutes.js");
 const healthRoutes = require("./routes/healthRoutes.js");
 const measureRoutes = require("./routes/measureRoutes.js");
 const sensorLayoutRoutes = require("./routes/sensorLayoutRoutes.js");
+const sensorMatRoutes = require("./routes/sensorMatRoutes.js");
 
 dotenv.config();
 const PORT = 4000;
@@ -20,6 +21,7 @@ app.use("/auth", authRoutes);
 app.use("/health", healthRoutes);
 app.use("/uvp", measureRoutes);
 app.use("/layout", sensorLayoutRoutes);
+app.use("/mat", sensorMatRoutes);
 
 mongoose
     .connect("mongodb://localhost:27017/sensortrackerDB")

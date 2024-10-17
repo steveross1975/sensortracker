@@ -5,6 +5,7 @@ exports.createLayout = async (req, res) => {
         const { 
             createdAt,
             lastUpdatedAt,
+            matId,
             numberOfSensors,
             compatibleProfiles,
             layout,
@@ -12,6 +13,7 @@ exports.createLayout = async (req, res) => {
         const layoutToInsert = await SensorLayout.create({
             createdAt,
             lastUpdatedAt,
+            matId,
             numberOfSensors,
             compatibleProfiles,
             layout,

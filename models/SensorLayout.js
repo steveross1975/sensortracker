@@ -9,8 +9,9 @@ const sensorLayout = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    numberOfSensors: {
-        type: Number,
+    matId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "SensorMat",
         required: true,
     },
     compatibleProfiles: [{
@@ -18,15 +19,14 @@ const sensorLayout = new mongoose.Schema({
         enum: ['Athlete', 'Visually Impaired', 'Neuro Test'],
         required: true,
     }],
-    layout: [new Schema({ 
+    layout: [new mongoose.Schema({ 
         sensorId: String, 
-        position: [new Schema({
+        position: [new mongoose.Schema({
             x: Number,
             y: Number,
         }, {_id: false})], 
         lightColor: String, 
-    }, {_id: false})
-    ],
+    }, {_id: false})],
 });
 
 const SensorLayout = mongoose.model("SensorLayout", sensorLayout);
