@@ -27,6 +27,10 @@ const sensorLayout = new mongoose.Schema({
         }, {_id: false})], 
         lightColor: String, 
     }, {_id: false})],
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    }
 });
 
 const SensorLayout = mongoose.model("SensorLayout", sensorLayout);

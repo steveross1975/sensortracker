@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const sensorLayout = new mongoose.Schema({
+const userLayout = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
@@ -31,6 +31,6 @@ const sensorLayout = new mongoose.Schema({
     },
 });
 
-const SensorLayout = mongoose.model("SensorLayout", sensorLayout);
+const UserLayout = mongoose.model("UserLayout", userLayout);
 
-module.exports = SensorLayout;
+module.exports = UserLayout;
