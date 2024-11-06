@@ -25,7 +25,14 @@ const sensorLayout = new mongoose.Schema({
             x: Number,
             y: Number,
         }, {_id: false})], 
-        lightColor: String, 
+        lightColor: {
+            type:String,
+            required: true,
+        },
+        time_on: {
+            type: Number,
+            required: true,
+        }
     }, {_id: false})],
     userId: {
         type: mongoose.Schema.Types.ObjectId,
