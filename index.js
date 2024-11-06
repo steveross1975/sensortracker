@@ -13,7 +13,7 @@ const sensorMatRoutes = require("./routes/sensorMatRoutes.js");
 const userLayoutRoutes = require("./routes/userLayoutRoutes.js");
 
 dotenv.config();
-const PORT = 8080;
+const PORT = 4000;
 
 app.use(express.json());
 app.use(cors());
